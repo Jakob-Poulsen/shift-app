@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/icon.jpg" />
+    <title>Timer</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet"
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <div class="settings-panel" id="context-menubtn" onclick="context()">
+    <span class="material-symbols-outlined" id="context-menu">
+        menu
+    </span>
+    <div id="expanded_menu">
+        <button onclick="showForside()">Forside</button>
+        <button onclick="showOversigt()">Oversigt</button>
+        <button onclick="showIndstillinger()">Indstillinger</button>
+    </div>
+    </div>
+
+    <main id="forside_page" class="main-viewport forside">
+        <div class="btn-container">
+            <button id="timeBtn" class="btn disabled">Start Timer</button>
+        </div>
+        <div class="task-list box-element" id="task_container">
+            <div class="row-index row">
+                <div id="index"><b>i</b></div>
+                <div id="dato_index"><b>Dato</b></div>
+                <div id="start_index"><b>Start</b></div>
+                <div id="slut_index"><b>Slut</b></div>
+                <div id="options"> </div>
+            </div>
+            <div class="row-list" id="task_list">
+                <!-- <div class="row-element"></div> -->
+            </div>
+        </div>
+        <div class="current ">
+            <div class="information-container additional-container">
+                <div class="date-container">DD/MM/YY</div>
+                <div class="time-container">HH/MM/SS</div>
+            </div>
+            <div class="status-container additional-container">
+                <div id="current_task">
+                    STATUS
+                </div>
+                <div id="starttime_display"> STARTTIME </div>
+            </div>
+        </div>
+    </main>
+    <main id="oversigt_page" class="main-viewport oversigt">
+        <div class="data-container box-element" id="overordnet_data">
+            
+        </div>
+        <div class="box-element oversigt-box">
+            <b class="oversigt-title">MÅNEDSOVERSIGT</b>
+            <div class="oversigt-data" id="månedsData"></div>
+        </div>
+
+    </main>
+    <main id="indstillinger_page" class="main-viewport indstillinger">
+        <div class="settings-container box-element">
+            <div class="setting">
+                <button onclick="deleteAll()">SLET ALT</button>
+            </div>
+            <div class="setting">
+                <label for="am-checkbox">AM bidrag (8%)</label>
+                <input type="checkbox" name="am-checkbox" id="">
+            <div class="setting">
+                <label for="skat">SKAT (42%)</label>
+                <input type="checkbox" name="skat-checkbox" id="">
+            </div>
+            </div>
+            <div class="setting">
+                <label for="lønrate">LØN</label>
+                <input type="number" name="lønrate" id="" value="150">
+            </div>
+        </div>
+        <div class="paperbin-container box-element">
+            <p>PAPIRKURV</p>
+            
+            <div class="bin-list row-list" id="bin_list">
+
+            </div>
+        </div>
+    </main>
+</body>
+<script src="./pages.js"></script>
+<script src="./div.js"></script>
+<script src="./oversigt.js"></script>
+<script src="./script.js"></script>
+</html>

@@ -1,0 +1,398 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.main-viewport {
+  background-color: hsla(30deg, 91%, 96%, 0.65);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  box-shadow: 2px 0px 4px 0px rgba(0, 0, 0, 0.25), -2px 0px 4px 0px rgba(0, 0, 0, 0.25);
+  width: min(100vw, 500px);
+  height: 100vh;
+  padding: 10px 0px 30px 0px;
+  display: flex;
+  align-items: center;
+}
+
+body {
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .forside {
+  display: inherit;
+  gap: 1.2rem;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+}
+body .forside .btn-container {
+  width: 80%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+}
+body .forside .btn-container button {
+  font-weight: 600;
+  width: 100%;
+  font-size: 2rem;
+  letter-spacing: 5px;
+  border: 1px solid black;
+  box-shadow: 0px 4px 5px black;
+  border-radius: 5px;
+}
+body .forside .btn-container .disabled {
+  background-color: rgb(2, 151, 2);
+}
+body .forside .btn-container .disabled:hover {
+  background-color: rgb(2, 125, 2);
+}
+body .forside .btn-container .disabled:active {
+  transform: scale(98%);
+}
+body .forside .btn-container .active {
+  background-color: red;
+}
+body .forside .btn-container .active:hover {
+  background-color: rgb(205, 3, 3);
+}
+body .forside .btn-container .active:active {
+  transform: scale(98%);
+}
+body .forside .current {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 80%;
+  position: relative;
+  padding: 20px 0;
+}
+body .forside .current .information-container {
+  display: flex;
+  flex-direction: column;
+}
+body .forside .current .status-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+body .forside .current .status-container #current_task {
+  width: 60%;
+  text-align: center;
+  border-bottom: 1px solid #315860;
+  padding-top: 10px;
+}
+body .forside .task-list {
+  height: 40vh;
+  overflow-y: scroll;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+body .forside .task-list::-webkit-scrollbar {
+  display: none;
+}
+body .forside .task-list .row-index {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+body .forside .task-list .row-index div {
+  width: 33%;
+  text-align: center;
+}
+body .forside .task-list .row-index #index, body .forside .task-list .row-index #options {
+  width: 15px;
+}
+
+.row-list {
+  flex-direction: column-reverse;
+  align-items: center;
+  width: 100%;
+  min-height: 5rem;
+}
+.row-list .row-element {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  border-bottom: 1px solid black;
+}
+.row-list .row-element:hover {
+  background-color: rgba(49, 88, 96, 0.1450980392);
+}
+.row-list .row-element .div {
+  width: 33%;
+  height: 50px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  border-left: 1px solid #315860;
+}
+.row-list .row-element .div div {
+  margin: auto;
+}
+.row-list .row-element .small-column {
+  width: 25px;
+  position: relative;
+}
+.row-list .row-element .small-column .material-symbols-outlined:hover {
+  background-color: #315860;
+}
+.row-list .row-element .small-column .more-options {
+  display: none;
+  position: absolute;
+  top: -10px;
+  right: 50px;
+  width: 200px;
+  height: 250px;
+  background-color: #FEF4EA;
+  border: 1px solid black;
+  box-shadow: 1px 1px 5px black;
+  padding: 10px;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.row-list .row-element .small-column .more-options b {
+  border-bottom: 1px solid black;
+  width: 100%;
+  text-transform: uppercase;
+  padding-bottom: 3px;
+}
+.row-list .row-element .small-column .more-options button {
+  padding: 4px 10px;
+  border: 1px solid black;
+  width: 105%;
+  text-align: center;
+}
+.row-list .row-element .small-column .more-options button:hover {
+  background-color: rgba(49, 88, 96, 0.2078431373);
+}
+.row-list .row-element .small-column .more-options .change-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid black;
+  padding-bottom: 7px;
+  width: 100%;
+}
+.row-list .row-element .small-column .more-options .change-container .change-info, .row-list .row-element .small-column .more-options .change-container .change-time-submit, .row-list .row-element .small-column .more-options .change-container .change-date-submit {
+  display: flex;
+  flex-direction: row;
+}
+.row-list .row-element .small-column .more-options .change-container .change-info {
+  width: 100%;
+}
+.row-list .row-element .small-column .more-options .change-container .change-info .info-title {
+  width: 50%;
+  text-align: center;
+}
+.row-list .row-element .small-column .more-options .change-container .change-time-submit input {
+  width: 50%;
+}
+.row-list .row-element .small-column .more-options .change-container .change-date-submit {
+  justify-content: center;
+  margin-bottom: 5px;
+  width: 100%;
+}
+.row-list .row-element .small-column .more-options label, .row-list .row-element .small-column .more-options input, .row-list .row-element .small-column .more-options button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 2rem;
+}
+.row-list .row-element .small-column .more-options .delete-btn {
+  margin-top: 7px;
+  width: 100%;
+  height: 3rem;
+  text-transform: uppercase;
+  font-weight: 1000;
+  border-radius: 5px;
+  background-color: rgb(255, 0, 0);
+  transition: 0.2s;
+}
+.row-list .row-element .small-column .more-options .delete-btn:hover {
+  box-shadow: 0 1px 2px black;
+}
+
+.row {
+  padding: 0px 10px;
+}
+
+main .box-element {
+  background-color: #FEF4EA;
+  width: 80%;
+  border: 1px solid black;
+}
+
+.material-symbols-outlined {
+  cursor: pointer;
+  border-radius: 50%;
+  font-variation-settings: "FILL" 0, "wght" 1000, "GRAD" 0, "opsz" 48;
+}
+
+.add-circle {
+  font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 0, "opsz" 48;
+}
+
+.settings-panel {
+  position: absolute;
+  top: 20px;
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.settings-panel:hover {
+  background-color: rgba(49, 88, 96, 0.2705882353);
+}
+.settings-panel:active {
+  background-color: rgba(49, 88, 96, 0.5215686275);
+}
+.settings-panel #expanded_menu {
+  display: none;
+  position: absolute;
+  left: 50px;
+  top: 25px;
+  width: 200px;
+  background-color: #FEF4EA;
+  border: 1px solid black;
+  flex-direction: column;
+  align-items: center;
+}
+.settings-panel #expanded_menu button {
+  border: none;
+  width: 100%;
+  background: transparent;
+  font-size: 1rem;
+  padding: 10px 0;
+}
+.settings-panel #expanded_menu button:hover {
+  background: rgba(49, 88, 96, 0.1450980392);
+}
+.settings-panel #expanded_menu button:active {
+  background: rgba(49, 88, 96, 0.2705882353);
+}
+
+.oversigt {
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.oversigt div {
+  min-height: 2rem;
+}
+.oversigt .data-container {
+  margin-top: 70px;
+}
+
+.indstillinger {
+  display: none;
+  flex-direction: column;
+  padding: 100px 0 0 0;
+}
+.indstillinger .paperbin-container {
+  display: flex;
+  flex-direction: column;
+}
+.indstillinger .paperbin-container p {
+  position: relative;
+  border-bottom: 1px solid black;
+  text-align: center;
+  height: 2rem;
+  padding-top: 0.5rem;
+}
+
+.oversigt-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+  height: 500px;
+}
+.oversigt-box::-webkit-scrollbar {
+  display: none;
+}
+.oversigt-box div {
+  min-height: 0;
+}
+.oversigt-box .oversigt-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  border-bottom: 2px solid black;
+}
+.oversigt-box .oversigt-data {
+  position: relative;
+  width: 100%;
+}
+.oversigt-box .oversigt-data .os-years {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.oversigt-box .oversigt-data .os-years .os-year {
+  position: relative;
+}
+.oversigt-box .oversigt-data .os-years .os-year .os-year-title {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  font-size: 1.2rem;
+}
+.oversigt-box .oversigt-data .os-years .os-year .os-months {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.oversigt-box .oversigt-data .os-years .os-year .os-months .os-month .os-month-title {
+  margin: 1rem 0 1rem 1rem;
+  height: 2rem;
+  font-size: 1.2rem;
+  display: flex;
+  gap: 1rem;
+}
+.oversigt-box .oversigt-data .os-years .os-year .os-months .os-month .os-month-title .copy-span {
+  width: 3rem;
+  height: 2rem;
+  text-align: center;
+}
+.oversigt-box .oversigt-data .os-years .os-year .os-months .os-month .os-month-title .copy-span:hover {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+.oversigt-box .oversigt-data .os-years .os-year .os-months .os-month .os-month-title .copy-span:active {
+  transform: scale(90%);
+}
+.oversigt-box .oversigt-data .os-years .os-year .os-months .os-month .os-days {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  position: relative;
+}
+.oversigt-box .oversigt-data .os-years .os-year .os-months .os-month .os-days .os-day {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  border-bottom: 1px solid #315860;
+}
+.oversigt-box .oversigt-data .os-years .os-year .os-months .os-month .os-days .os-day .os-spec {
+  width: 100%;
+}
+.oversigt-box .oversigt-data .os-years .os-year .os-months .os-month .os-days .os-day .os-spec-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}/*# sourceMappingURL=style.css.map */
